@@ -1,2 +1,2 @@
-# catole_food
-Projeto JPA Hibernate para registros de itens do cardapio e historico de pedidos - sem servidor de aplicação.
+# rasfood
+projeto JPA Hibernate para registro de itens do cardápio e histórico de pedidos - sem servidor de aplicação
