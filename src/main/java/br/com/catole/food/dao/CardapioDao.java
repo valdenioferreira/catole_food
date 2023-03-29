@@ -35,6 +35,15 @@ public class CardapioDao {
         return this.entityManager.createQuery(jpql,Cardapio.class).setParameter("valor",filtro).getResultList();
     }
 
+    public Cardapio consultarPorNome(final String filtro){
+        try {
+        String jpql = "SELECT c FROM Cardapio c WHERE Upper(c.nome) = Upper(:nome)";
+        return this.entityManager.createQuery(jpql,Cardapio.class).setParameter("nome",filtro).getSingleResult();
+        }catch (Exception e){
+            return null;
+        }
+    }
+
     public List<Cardapio> consultarTodos(){
         String jpql = "SELECT c FROM Cardapio c";
         return this.entityManager.createQuery(jpql,Cardapio.class).getResultList();
