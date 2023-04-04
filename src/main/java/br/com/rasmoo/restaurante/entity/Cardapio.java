@@ -1,4 +1,4 @@
-package br.com.catole.food.entity;
+package br.com.rasmoo.restaurante.entity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -26,7 +26,7 @@ public class Cardapio {
      * OneToMany
      * OneToOne
      * */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Categoria categoria;
 
     @Column(name = "data_de_registro")

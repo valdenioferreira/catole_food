@@ -1,4 +1,4 @@
-package br.com.catole.food.entity;
+package br.com.rasmoo.restaurante.entity;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
-package br.com.catole.food.dao;
+package br.com.rasmoo.restaurante.dao;
 
-import br.com.catole.food.entity.Cardapio;
+import br.com.rasmoo.restaurante.entity.Cardapio;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
@@ -33,15 +33,6 @@ public class CardapioDao {
     public List<Cardapio> consultarPorValor(final BigDecimal filtro){
         String jpql = "SELECT c FROM Cardapio c WHERE c.valor = :valor";
         return this.entityManager.createQuery(jpql,Cardapio.class).setParameter("valor",filtro).getResultList();
-    }
-
-    public Cardapio consultarPorNome(final String filtro){
-        try {
-        String jpql = "SELECT c FROM Cardapio c WHERE Upper(c.nome) = Upper(:nome)";
-        return this.entityManager.createQuery(jpql,Cardapio.class).setParameter("nome",filtro).getSingleResult();
-        }catch (Exception e){
-            return null;
-        }
     }
 
     public List<Cardapio> consultarTodos(){
